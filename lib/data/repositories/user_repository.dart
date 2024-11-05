@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:whatsapp_clone/data/data_sources/firebase_data_source.dart';
 import 'package:whatsapp_clone/data/models/user_model.dart';
@@ -6,7 +7,7 @@ import 'package:whatsapp_clone/domain/repositories/user_repository.dart';
 
 class UserRepositoryImpl implements UserRepository{
   final FirebaseDataSource firebaseDataSource;
-
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   UserRepositoryImpl(this.firebaseDataSource);
   @override
   Future<UserModel?> getUser(String userId)async {
@@ -24,5 +25,10 @@ class UserRepositoryImpl implements UserRepository{
   Future<User?> signInUser(String email, String password) async{
   return await firebaseDataSource.signInUser(email, password);
    }
-  
+
+  Stream<List<UserModel>> getUsers() {
+    return _firestore.collection('users').snapshots().map((snapshot) {
+      return snapshot.docs.map((doc) => UserModel.fromJson(doc.data())).toList();
+    });
+  }
 }

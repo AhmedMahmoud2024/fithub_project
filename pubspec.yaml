@@ -41,6 +41,7 @@ dependencies:
   image_picker:
   firebase_storage:
   bloc:
+  flutter_bloc:
 //  firebase_cloud_firestore:
 dev_dependencies:
   flutter_test:
