@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:whatsapp_clone/presentation/screens/chat_list2_screen.dart';
 import 'dart:io';
 import '../../domain/entities/user_entity.dart';
 import '../blocs/user_cubit.dart';

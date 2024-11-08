@@ -16,4 +16,5 @@ await _firestore.collection('stories').add({
   'timestamp':FieldValue.serverTimestamp()
 });
   }
+
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:whatsapp_clone/presentation/screens/chat_list2_screen.dart';
 import 'package:whatsapp_clone/presentation/screens/registration_screen.dart';
 import '../blocs/user_cubit.dart';
 import 'chat_list_screen.dart'; // Import the ChatListScreen
@@ -36,7 +37,8 @@ class LoginScreen extends StatelessWidget {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ChatListScreen(
+                      builder: (context) =>
+                          ChatListScreen(
                         userId: state.user!.uid, // Assuming UserEntity has an id field
                         userName: state.user!.uid,
                         userImage: state.user!.uid, // Assuming UserEntity has a profileImage field
