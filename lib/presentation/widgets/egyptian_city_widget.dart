@@ -63,11 +63,39 @@ class _EgyptianCityWidgetState extends State<EgyptianCityWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.end,
+     // crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // Governorate Dropdown
+        GestureDetector(
+          onTap: _showGovernorateBottomSheet,
+          child: Container(
+          margin: EdgeInsets.only(right: 5),
+            padding: EdgeInsets.symmetric(horizontal: 8.0,vertical: 12.0),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey),
+              borderRadius: BorderRadius.circular(5.0),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  _selectedGovernorate ?? 'اختر محافظة',
+                  style: TextStyle(color: _selectedGovernorate == null ? Colors.grey : Colors.black,
+                  ),
+                  textAlign: TextAlign.right,
+                ),
+                Icon(Icons.arrow_drop_down),
+              ],
+            ),
+          ),
+        ),
+        SizedBox(height: 10),
         Text(
           'أدخل اسم المدينة',
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,),
+         textAlign: TextAlign.end,
         ),
         SizedBox(height: 10),
         TextField(
@@ -76,28 +104,7 @@ class _EgyptianCityWidgetState extends State<EgyptianCityWidget> {
             hintText: 'أدخل المدينة',
             border: OutlineInputBorder(),
           ),
-        ),
-        SizedBox(height: 10),
-        // Governorate Dropdown
-        GestureDetector(
-          onTap: _showGovernorateBottomSheet,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 8.0),
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(5.0),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  _selectedGovernorate ?? 'اختر محافظة',
-                  style: TextStyle(color: _selectedGovernorate == null ? Colors.grey : Colors.black),
-                ),
-                Icon(Icons.arrow_drop_down),
-              ],
-            ),
-          ),
+          textAlign: TextAlign.end,
         ),
         SizedBox(height: 10),
         if (_selectedGovernorate != null) ...[
@@ -171,6 +178,8 @@ class _GovernorateBottomSheetState extends State<GovernorateBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.sizeOf(context).width/2,
+      height: MediaQuery.sizeOf(context).height,
       padding: EdgeInsets.all(16.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -178,7 +187,7 @@ class _GovernorateBottomSheetState extends State<GovernorateBottomSheet> {
           Text(
             'اختر المحافظة',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
+            textAlign: TextAlign.end,
           ),
           SizedBox(height: 10),
           TextField(

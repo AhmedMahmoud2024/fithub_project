@@ -19,7 +19,7 @@ class ModifiedRegestrationScreen extends StatelessWidget {
              Text("أكمل التسجيل",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),),
             Text("أكمل أنشاء حسابك بإدخال البيانات ادناه",style: TextStyle(fontSize: 18),),
             SizedBox(height: 30,),
-            Text("رقم الهاتف"),
+           // Text("رقم الهاتف"),
             PhoneNumberInput(),
             SizedBox(height: 10,),
             EgyptianCityWidget()
