@@ -33,79 +33,82 @@ class _PhoneNumberInputState extends State<PhoneNumberInput> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Phone Number',
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(height: 10),
-        Row(
-          children: [
-            // Country Code Dropdown
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 8.0),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(5.0),
-              ),
-              child: DropdownButton<String>(
-                value: _countryCode,
-                items: _countryCodes.map((country) {
-                  return DropdownMenuItem<String>(
-                    value: country['code'],
-                    child: Text('${country['code']} (${country['name']})'),
-                  );
-                }).toList(),
-                onChanged: (value) {
-                  setState(() {
-                    _countryCode = value!;
-                  });
-                },
-                underline: SizedBox(),
-              ),
-            ),
-            SizedBox(width: 8.0),
-            // Phone Number Input Field
-            Expanded(
-              child: InternationalPhoneNumberInput(
-                onInputChanged: (PhoneNumber number) {
-                  _phoneNumber = number;
-                },
-                selectorConfig: SelectorConfig(
-                  selectorType: PhoneInputSelectorType.DROPDOWN,
-                ),
-                ignoreBlank: false,
-                autoValidateMode: AutovalidateMode.disabled,
-                selectorTextStyle: TextStyle(color: Colors.black),
-                initialValue: _phoneNumber,
-                textFieldController: _phoneController,
-                formatInput: false,
-                keyboardType: TextInputType.number,
-                inputBorder: OutlineInputBorder(
+    return Directionality(
+      textDirection: TextDirection.rtl, // Set text direction to RTL
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end, // Align items to the end
+        children: [
+          Text(
+            'رقم الهاتف',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 10),
+          Row(
+            children: [
+              // Country Code Dropdown
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 8.0),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
                   borderRadius: BorderRadius.circular(5.0),
-                  borderSide: BorderSide(color: Colors.grey),
                 ),
-                hintText: 'Enter your phone number',
+                child: DropdownButton<String>(
+                  value: _countryCode,
+                  items: _countryCodes.map((country) {
+                    return DropdownMenuItem<String>(
+                      value: country['code'],
+                      child: Text('${country['code']} (${country['name']})'),
+                    );
+                  }).toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      _countryCode = value!;
+                    });
+                  },
+                  underline: SizedBox(),
+                ),
               ),
-            ),
-          ],
-        ),
-        SizedBox(height: 10),
-        ElevatedButton(
-          onPressed: () {
-            // Validate the phone number
-            if (_phoneController.text.isEmpty) {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Please enter a phone number.')));
-            } else {
-              // Here you can handle the phone number submission
-              print('Country Code: $_countryCode, Phone Number: ${_phoneController.text}');
-            }
-          },
-          child: Text('Submit'),
-        ),
-      ],
+              SizedBox(width: 8.0),
+              // Phone Number Input Field
+              Expanded(
+                child: InternationalPhoneNumberInput(
+                  onInputChanged: (PhoneNumber number) {
+                    _phoneNumber = number;
+                  },
+                  selectorConfig: SelectorConfig(
+                    selectorType: PhoneInputSelectorType.DROPDOWN,
+                  ),
+                  ignoreBlank: false,
+                  autoValidateMode: AutovalidateMode.disabled,
+                  selectorTextStyle: TextStyle(color: Colors.black),
+                  initialValue: _phoneNumber,
+                  textFieldController: _phoneController,
+                  formatInput: false,
+                  keyboardType: TextInputType.number,
+                  inputBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  hintText: 'أدخل رقم هاتفك',
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 10),
+          ElevatedButton(
+            onPressed: () {
+              // Validate the phone number
+              if (_phoneController.text.isEmpty) {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('يرجى إدخال رقم الهاتف.')));
+              } else {
+                // Here you can handle the phone number submission
+                print('رمز الدولة: $_countryCode, رقم الهاتف: ${_phoneController.text}');
+              }
+            },
+            child: Text('إرسال'),
+          ),
+        ],
+      ),
     );
   }
 }

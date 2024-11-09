@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/presentation/widgets/egyptian_city_widget.dart';
 import 'package:whatsapp_clone/presentation/widgets/phone.dart';
 
 class ModifiedRegestrationScreen extends StatelessWidget {
@@ -19,7 +20,9 @@ class ModifiedRegestrationScreen extends StatelessWidget {
             Text("أكمل أنشاء حسابك بإدخال البيانات ادناه",style: TextStyle(fontSize: 18),),
             SizedBox(height: 30,),
             Text("رقم الهاتف"),
-            PhoneNumberInput()
+            PhoneNumberInput(),
+            SizedBox(height: 10,),
+            EgyptianCityWidget()
           ],
         ),
       ),

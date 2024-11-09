@@ -1,9 +1,9 @@
 [
-{"code": "+1", "name": "United States"},
-{"code": "+44", "name": "United Kingdom"},
-{"code": "+91", "name": "India"},
-{"code": "+61", "name": "Australia"},
-{"code": "+81", "name": "Japan"},
-{"code": "+49", "name": "Germany"}
+  {"code": "+1", "name": "الولايات المتحدة"},
+  {"code": "+44", "name": "المملكة المتحدة"},
+  {"code": "+91", "name": "الهند"},
+  {"code": "+61", "name": "أستراليا"},
+  {"code": "+81", "name": "اليابان"},
+  {"code": "+49", "name": "ألمانيا"}
 
 ]
