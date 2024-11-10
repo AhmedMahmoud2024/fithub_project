@@ -38,9 +38,15 @@ class _PhoneNumberInputState extends State<PhoneNumberInput> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end, // Align items to the end
         children: [
-          Text(
-            'رقم الهاتف',
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                'رقم الهاتف',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+             // textAlign: TextAlign.end,
+              ),
+            ],
           ),
           SizedBox(height: 10),
           Row(
@@ -71,7 +77,8 @@ class _PhoneNumberInputState extends State<PhoneNumberInput> {
               SizedBox(width: 8.0),
               // Phone Number Input Field
               Expanded(
-                child: InternationalPhoneNumberInput(
+                child:
+                InternationalPhoneNumberInput(
                   onInputChanged: (PhoneNumber number) {
                     _phoneNumber = number;
                   },
@@ -95,20 +102,21 @@ class _PhoneNumberInputState extends State<PhoneNumberInput> {
             ],
           ),
           SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {
-              // Validate the phone number
-              if (_phoneController.text.isEmpty) {
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('يرجى إدخال رقم الهاتف.')));
-              } else {
-                // Here you can handle the phone number submission
-                print('رمز الدولة: $_countryCode, رقم الهاتف: ${_phoneController.text}');
-              }
-            },
-            child: Text('إرسال'),
-          ),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     // Validate the phone number
+          //     if (_phoneController.text.isEmpty) {
+          //       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('يرجى إدخال رقم الهاتف.')));
+          //     } else {
+          //       // Here you can handle the phone number submission
+          //       print('رمز الدولة: $_countryCode, رقم الهاتف: ${_phoneController.text}');
+          //     }
+          //   },
+          //   child: Text('إرسال'),
+          // ),
         ],
       ),
     );
   }
 }
+
