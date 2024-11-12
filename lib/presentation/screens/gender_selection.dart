@@ -1,4 +1,3 @@
-import 'dart:ui_web';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +38,7 @@ class GenderSelection extends StatelessWidget {
               Text(
                 'اى واحد من هؤلاء انت؟',
                 textAlign: TextAlign.right,
-                style: TextStyle(  color: Color(0xFF919FB6),fontSize: 28,fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 28,fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 6,),
               Text(

@@ -16,7 +16,6 @@ class _GenderSelectionWidgetState extends State<GenderSelectionWidget> {
 
     return SingleChildScrollView(
       child: Column(
-
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           GestureDetector(

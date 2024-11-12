@@ -6,6 +6,8 @@ import 'package:whatsapp_clone/presentation/blocs/user_cubit.dart';
 import 'package:whatsapp_clone/presentation/screens/Modified%20_Regestration_Screen.dart';
 import 'package:whatsapp_clone/presentation/screens/Modified_login_Screen.dart';
 import 'package:whatsapp_clone/presentation/screens/gender_selection.dart';
+import 'package:whatsapp_clone/presentation/screens/weight_hight_screen.dart';
+import 'package:whatsapp_clone/presentation/widgets/weight_height_widget.dart';
 import 'data/repositories/user_repository.dart';
 import 'data/data_sources/firebase_data_source.dart';
 import 'domain/repositories/user_repository.dart';
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Chat App',
         theme: ThemeData.light(),
-        home: GenderSelection(),
+        home: WeightHightScreen(),
       ),
     );
   }
