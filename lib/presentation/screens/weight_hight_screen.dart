@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/presentation/widgets/next_Button.dart';
 import 'package:whatsapp_clone/presentation/widgets/weight_height_widget.dart';
 
 
@@ -47,7 +48,10 @@ class WeightHightScreen extends StatelessWidget {
                 style: TextStyle(  color: Color(0xFF919FB6),fontSize: 16,fontWeight: FontWeight.w400,),
               ),
               SizedBox(height: 20,),
-           WeightHeightWidget()
+           WeightHeightWidget(label: 'وزن', unit: 'كحم', controller: TextEditingController(),),
+              SizedBox(height: 6,),
+              WeightHeightWidget(label: 'طول', unit: 'م', controller: TextEditingController(),),
+            NextButton(onPressed: (){})
             ],
           )
           ,
