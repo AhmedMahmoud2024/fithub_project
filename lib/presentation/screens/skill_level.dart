@@ -4,10 +4,37 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/presentation/widgets/next_Button.dart';
 import 'package:whatsapp_clone/presentation/widgets/weight_height_widget.dart';
 
+import '../widgets/custom_heading.dart';
+import '../widgets/skill_card.dart';
 
-class SkillLevelScreen extends StatelessWidget {
+
+class SkillLevelScreen extends StatefulWidget {
   const SkillLevelScreen({super.key});
 
+  @override
+  State<SkillLevelScreen> createState() => _SkillLevelScreenState();
+}
+
+class _SkillLevelScreenState extends State<SkillLevelScreen> {
+
+    String _selectedSkillLevel = '';
+
+  void _selectSkillLevel(String level) {
+    setState(() {
+      _selectedSkillLevel = level;
+    });
+  }
+      void _submitSkillLevel() {
+    if (_selectedSkillLevel.isNotEmpty) {
+      // Implement submission logic here
+      print('Selected Skill Level: $_selectedSkillLevel');
+
+//      Navigator.push(context, MaterialPageRoute(builder: (context) => SportsFormScreen(),));
+    } else {
+      // Show an error message or toast
+      print('Please select a skill level');
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,115 +76,105 @@ class SkillLevelScreen extends StatelessWidget {
                   textAlign: TextAlign.right,
                   style: TextStyle(  color: Color(0xFF919FB6),fontSize: 16,fontWeight: FontWeight.w400,),
                 ),
-                SizedBox(height: 20,),
-            Container(
-              width: double.infinity,
-              height: 100,
-              child: ListView(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Icon(Icons.lightbulb_outline),
-                          SizedBox(width: 3,),
-                          Text(
-                            'مبتدئ',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 24
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(height: 5,),
-                      Text("يمكنك القيام ب 5 ضغط فى المره الواحده",
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400
-                      ),),
-
-                    ],
-                  )
-                ],
-              ),
-            ),
-            SizedBox(height: 3,),
-                Container(
-                  width: double.infinity,
-                  height: 100,
-                  child: ListView(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Icon(Icons.lightbulb_outline),
-                              SizedBox(width: 3,),
-                              Text(
-                                'متوسط',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 24
-                                ),
-                              )
-                            ],
-                          ),
-                          SizedBox(height: 5,),
-                          Text("يمكنك القيام ب 10 ضغط فى المره الواحده",
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400
-                            ),),
-
-                        ],
-                      )
-                    ],
-                  ),
+                                SizedBox(height: 32),
+                SkillCard(
+                  level: 'مبتدئ',
+                  description: "يمكنك القيام ب 5 ضغط فى المره الواحده",
+                  iconPath: 'assets/Accesories.png',
+                  isSelected: _selectedSkillLevel == 'مبتدئ',
+                  onSelect: _selectSkillLevel,
                 ),
-                SizedBox(height: 3,),
-                Container(
-                  width: double.infinity,
-                  height: 100,
-                  child: ListView(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Icon(Icons.fireplace_outlined),
-                              SizedBox(width: 3,),
-                              Text(
-                                'محترف',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 24
-                                ),
-                              )
-                            ],
-                          ),
-                          SizedBox(height: 5,),
-                          Text("يمكنك القيام ب 15 ضغط فى المره الواحده",
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400
-                            ),),
-
-                        ],
-                      )
-                    ],
-                  ),
+                SizedBox(height: 8),
+                SkillCard(
+                  level: 'متوسط',
+                  description: "يمكنك القيام ب 10 ضغط فى المرة الواحدة",
+                  iconPath: 'assets/ic_action_name.png',
+                  isSelected: _selectedSkillLevel == 'متوسط',
+                  onSelect: _selectSkillLevel,
+                  selectedBackgroundColor: Color(0xFFE6F1FF),
+                  selectedBorderColor: Color(0xFF9BBFFE),
                 ),
-            //    WeightHeightWidget(label: 'وزن', unit: 'كحم', controller: TextEditingController(),),
-             //   SizedBox(height: 6,),
-              //  WeightHeightWidget(label: 'طول', unit: 'م', controller: TextEditingController(),),
-                NextButton(onPressed: (){})
+            //     SizedBox(height: 20,),
+            // Container(
+            //   width: double.infinity,
+            //   height: 100,
+            //   child: ListView(
+            //     children: [
+            //       Column(
+            //         crossAxisAlignment: CrossAxisAlignment.end,
+            //         children: [
+            //           Row(
+            //             mainAxisAlignment: MainAxisAlignment.end,
+            //             children: [
+            //               Icon(Icons.lightbulb_outline),
+            //               SizedBox(width: 3,),
+            //               Text(
+            //                 'مبتدئ',
+            //                 style: TextStyle(
+            //                   fontWeight: FontWeight.bold,
+            //                   fontSize: 24
+            //                 ),
+            //               )
+            //             ],
+            //           ),
+            //           SizedBox(height: 5,),
+            //           Text("يمكنك القيام ب 5 ضغط فى المره الواحده",
+            //           style: TextStyle(
+            //             fontSize: 14,
+            //             fontWeight: FontWeight.w400
+            //           ),),
+            //
+            //         ],
+            //       )
+            //     ],
+            //   ),
+            // ),
+            // SizedBox(height: 3,),
+            //     Container(
+            //       width: double.infinity,
+            //       height: 100,
+            //       child: ListView(
+            //         children: [
+            //           Column(
+            //             crossAxisAlignment: CrossAxisAlignment.end,
+            //             children: [
+            //               Row(
+            //                 mainAxisAlignment: MainAxisAlignment.end,
+            //                 children: [
+            //                   Icon(Icons.lightbulb_outline),
+            //                   SizedBox(width: 3,),
+            //                   Text(
+            //                     'متوسط',
+            //                     style: TextStyle(
+            //                         fontWeight: FontWeight.bold,
+            //                         fontSize: 24
+            //                     ),
+            //                   )
+            //                 ],
+            //               ),
+            //               SizedBox(height: 5,),
+            //               Text("يمكنك القيام ب 10 ضغط فى المره الواحده",
+            //                 style: TextStyle(
+            //                     fontSize: 14,
+            //                     fontWeight: FontWeight.w400
+            //                 ),),
+            //
+            //             ],
+            //           )
+            //         ],
+            //       ),
+            //     ),
+            //     SizedBox(height: 3,),
+                SkillCard(
+                  level: 'محترف',
+                  description: "يمكنك القيام ب 5 ضغط فى المرة الواحدة",
+                     iconPath: 'assets/Accesories.png',
+                  isSelected: _selectedSkillLevel == 'محترف',
+                  onSelect: _selectSkillLevel,
+                  selectedBackgroundColor: Color(0xFFE6F1FF),
+                  selectedBorderColor: Color(0xFF9BBFFE),
+                ),
+                NextButton(onPressed: _submitSkillLevel)
               ],
             )
             ,

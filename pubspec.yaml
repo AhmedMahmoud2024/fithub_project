@@ -72,6 +72,7 @@ flutter:
   assets:
     - assets/country_codes.json
     - assets/Accesories.png
+    - assets/ic_action_name.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
