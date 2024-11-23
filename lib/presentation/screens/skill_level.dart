@@ -17,6 +17,19 @@ class SkillLevelScreen extends StatefulWidget {
 
 class _SkillLevelScreenState extends State<SkillLevelScreen> {
 
+  String selectedLevel='';
+
+  void selectLevel(String level1){
+    setState(() {
+      selectedLevel=level1;
+    });
+  }
+  void submitLevel(){
+    if(selectedLevel.isNotEmpty){
+      print("selected Level is : $selectedLevel");
+    }
+  }
+
     String _selectedSkillLevel = '';
 
   void _selectSkillLevel(String level) {
