@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class GoalCard extends StatelessWidget {
+class TrainingStyleCard extends StatelessWidget {
   final String title;
   final String description;
   final bool isSelected;
   final Function(String) onSelect;
   final Color backgroundColor;
 
-  const GoalCard({
+  const TrainingStyleCard({
     required this.title,
     required this.description,
     required this.isSelected,
@@ -20,9 +20,8 @@ class GoalCard extends StatelessWidget {
     return GestureDetector(
       onTap: () => onSelect(title),
       child: Container(
-       // width: double.infinity,
         decoration: BoxDecoration(
-          color: isSelected ? Color(0xFFE6EFFF) : backgroundColor,
+          color: isSelected ? backgroundColor : Colors.white,
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: Color(0xFFDDE4EE)),
         ),

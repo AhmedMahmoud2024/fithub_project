@@ -73,6 +73,25 @@ flutter:
     - assets/country_codes.json
     - assets/Accesories.png
     - assets/ic_action_name.png
+    - assets/24-search.svg
+    - assets/sport.svg
+    - assets/other-2.svg
+    - assets/other.svg
+    - assets/sport.svg
+    - assets/sport-2.svg
+    - assets/sport-3.svg
+    - assets/sport-4.svg
+    - assets/sport-5.svg
+    - assets/sport-6.svg
+    - assets/sport-7.svg
+    - assets/sport-8.svg
+    - assets/sport-9.svg
+    - assets/sport-10.svg
+    - assets/sport-11.svg
+    - assets/sport-12.svg
+    - assets/sport-13.svg
+    - assets/sport-14.svg
+    - assets/24-arrow-right.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

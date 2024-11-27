@@ -46,6 +46,7 @@ class _GoalsScreenState extends State<GoalsScreen> {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
+        width: double.infinity,
         margin: EdgeInsets.only(right: 10.0),
         child: ListView(
           // crossAxisAlignment: CrossAxisAlignment.end,
@@ -119,6 +120,3 @@ class _GoalsScreenState extends State<GoalsScreen> {
 
   }
 }
-
-
-
