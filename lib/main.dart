@@ -8,6 +8,7 @@ import 'package:whatsapp_clone/presentation/screens/Modified_login_Screen.dart';
 import 'package:whatsapp_clone/presentation/screens/body_status_screen.dart';
 import 'package:whatsapp_clone/presentation/screens/gender_selection.dart';
 import 'package:whatsapp_clone/presentation/screens/goals.dart';
+import 'package:whatsapp_clone/presentation/screens/mainScreen/home-screen.dart';
 import 'package:whatsapp_clone/presentation/screens/skill_level.dart';
 import 'package:whatsapp_clone/presentation/screens/sports_screen.dart';
 import 'package:whatsapp_clone/presentation/screens/training_environment_screen.dart';
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Chat App',
         theme: ThemeData.light(),
-        home: BodyStatusFormScreen(),
+        home: MyHomePage(),
       ),
     );
   }
