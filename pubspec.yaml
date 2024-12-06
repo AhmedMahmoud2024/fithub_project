@@ -106,6 +106,7 @@ flutter:
     - assets/sport-13.svg
     - assets/sport-14.svg
     - assets/24-arrow-right.svg
+    - assets/3dicons.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

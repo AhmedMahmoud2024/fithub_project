@@ -28,7 +28,7 @@ final GoRouter _router = GoRouter(
         StatefulShellBranch(navigatorKey: _sectionNavigatorKey, routes: [
           GoRoute(
             path: "/home",
-            builder: (context, state) => const MyHomePage(),
+            builder: (context, state) =>  MyHomePage(),
           )
         ]),
         StatefulShellBranch(routes: [GoRoute(

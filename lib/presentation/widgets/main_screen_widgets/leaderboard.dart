@@ -29,7 +29,8 @@ class Leaderboard extends StatelessWidget {
             LeaderboardItem(position: 3, username: '***أحمد م', points: '9 488', isHighlighted: false),
             LeaderboardItem(position: 4, username: '***رنا ', points: '8 789', isHighlighted: false),
             Divider(color: Colors.black26),
-            LeaderboardItem(position: 45, username: 'محمد عزت', points: '512', isHighlighted: true),
+            LeaderboardItem(position: 45, username: '***محمد ', points: '512', isHighlighted: true),
+
           ],
         ),
       ],
