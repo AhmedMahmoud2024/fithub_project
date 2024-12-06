@@ -9,10 +9,10 @@ class Leaderboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Text(
-          'Leaderboard',
+          'لوحة الصداره',
           style: TextStyle(
             fontFamily: 'Poppins',
             fontWeight: FontWeight.bold,
@@ -22,13 +22,14 @@ class Leaderboard extends StatelessWidget {
         ),
         SizedBox(height: 18),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            LeaderboardItem(position: 1, username: 'Abdulla A***', points: '11 238', isHighlighted: false),
-            LeaderboardItem(position: 2, username: 'Ahmed S***', points: '10 600', isHighlighted: false),
-            LeaderboardItem(position: 3, username: 'Mahamed E***', points: '9 488', isHighlighted: false),
-            LeaderboardItem(position: 4, username: 'Saad H***', points: '8 789', isHighlighted: false),
+            LeaderboardItem(position: 1, username: '***محمود ع', points: '11 238', isHighlighted: false),
+            LeaderboardItem(position: 2, username: '***سعيد م', points: '10 600', isHighlighted: false),
+            LeaderboardItem(position: 3, username: '***أحمد م', points: '9 488', isHighlighted: false),
+            LeaderboardItem(position: 4, username: '***رنا ', points: '8 789', isHighlighted: false),
             Divider(color: Colors.black26),
-            LeaderboardItem(position: 45, username: 'Abdulla Gomma', points: '512', isHighlighted: true),
+            LeaderboardItem(position: 45, username: 'محمد عزت', points: '512', isHighlighted: true),
           ],
         ),
       ],

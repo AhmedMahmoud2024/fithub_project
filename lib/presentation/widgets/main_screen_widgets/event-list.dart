@@ -11,12 +11,12 @@ class EventList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 14),
           child: Text(
-            'Nearby Events',
+            'أحداث قريبه منك',
             style: TextStyle(
               fontFamily: 'Poppins',
               fontWeight: FontWeight.bold,
@@ -37,21 +37,21 @@ class EventList extends StatelessWidget {
                   imageUrl: 'assets/images/event-2.png',
                   status: 'Now',
                   capacity: '64/100',
-                  eventName: 'Weight Lifting',
+                  eventName: 'مسابقه رفع اوزان',
                   date: '24\\3\\2024',
                 ),
                 SizedBox(width: 8),
                 EventCard(
                   imageUrl: 'assets/images/event-1.png',
                   capacity: '19/20',
-                  eventName: 'MaraThon for Gaza',
+                  eventName: 'ماراثون من أجل غزة',
                   date: '24\\3\\2024',
                 ),
                 SizedBox(width: 8),
                 EventCard(
                   imageUrl: 'assets/images/event-2.png',
                   capacity: '64/100',
-                  eventName: 'Football Match',
+                  eventName: 'كرة قدم',
                   date: '24\\3\\2024',
                 ),
               //  Gap(14)

@@ -25,20 +25,17 @@ class LeaderboardItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
+    mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          PositionIndicator(position: position, isHighlighted: isHighlighted),
-          const SizedBox(width: 32),
-          Expanded(
-            child: Text(
-              username,
-              style: const TextStyle(
-                fontFamily: 'DM Sans',
-                fontSize: 16,
-                color: Color(0xFF101C2D),
-              ),
+          const Text(
+            'ن',
+            style: TextStyle(
+              fontFamily: 'DM Sans',
+              fontSize: 16,
+              color: Color(0xFF101C2D),
             ),
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: 10),
           Text(
             points,
             style: const TextStyle(
@@ -48,14 +45,18 @@ class LeaderboardItem extends StatelessWidget {
             ),
             textAlign: TextAlign.right,
           ),
-          const Text(
-            ' pt',
-            style: TextStyle(
-              fontFamily: 'DM Sans',
-              fontSize: 16,
-              color: Color(0xFF101C2D),
+          const SizedBox(width: 450),
+          Expanded(
+            child: Text(
+              username,
+              style: const TextStyle(
+                fontFamily: 'DM Sans',
+                fontSize: 28,
+                color: Color(0xFF101C2D),
+              ),
             ),
           ),
+          PositionIndicator(position: position, isHighlighted: isHighlighted),
         ],
       ),
     );

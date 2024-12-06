@@ -122,12 +122,6 @@ class EventCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
             child: Row(
               children: [
-                const Icon(
-                  Icons.calendar_today,
-                  size: 16,
-                  color: Color(0xFF66768E),
-                ),
-                const SizedBox(width: 8),
                 Text(
                   date,
                   style: const TextStyle(
@@ -137,6 +131,12 @@ class EventCard extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
+                const SizedBox(width: 8),
+                const Icon(
+                  Icons.calendar_today,
+                  size: 16,
+                  color: Color(0xFF66768E),
+                ),
               ],
             ),
           ),
@@ -145,4 +145,3 @@ class EventCard extends StatelessWidget {
     );
   }
 }
-

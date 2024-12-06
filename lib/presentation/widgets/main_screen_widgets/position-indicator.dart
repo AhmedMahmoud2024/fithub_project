@@ -32,3 +32,4 @@ class PositionIndicator extends StatelessWidget {
     );
   }
 }
+
