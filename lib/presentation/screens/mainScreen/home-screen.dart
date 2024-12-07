@@ -43,6 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
           IconButton(
+
             icon: SvgPicture.asset('assets/icons/message.svg'),
             onPressed: () {
               print('presed');
@@ -95,14 +96,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () { context.go('/profile'); },
-        tooltip: 'Increment',
+        onPressed: () {
+         _showModalBottomSheet(context);
+          },
+        tooltip: 'فطين',
         backgroundColor: const Color(0xFF0560FD),
         child: SvgPicture.asset('assets/icons/bot.svg'),
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
+
   }
+
 }
 
 Widget statusOfExercise(){
@@ -161,4 +166,69 @@ Widget statusOfExercise(){
       ],
     ),
   );
+}
+
+void _showModalBottomSheet(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    builder: (BuildContext context) {
+      return Container(
+
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisSize: MainAxisSize.min, // Use min to fit the content
+          children: <Widget>[
+            Center(
+              child: Text(
+                'فطين مساعدك الشخصى',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
+            ),
+            SizedBox(height: 10),
+
+            IconTextRow(text: 'متابعة تقدمك',icon: Icons.home,),
+            IconTextRow(icon: Icons.settings, text: 'دردشة عن حالتك وخطتك'),
+            IconTextRow(icon: Icons.info, text: 'محادثة عامة'),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context); // Close the bottom sheet
+              },
+              child: Text('Close'),
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}
+// Reusable Row Widget
+class IconTextRow extends StatelessWidget {
+  final IconData icon;
+  final String text;
+
+  const IconTextRow({Key? key, required this.icon, required this.text}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 30,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Icon(
+              Icons.arrow_back
+          ),
+        SizedBox(width: 10),
+          Text(text, style: TextStyle(fontSize: 16)),
+          SizedBox(width: 10),
+          Icon(icon, size: 24.0),
+       // Space between icon and text
+
+        ],
+      ),
+    );
+  }
 }
