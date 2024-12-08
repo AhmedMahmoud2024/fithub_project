@@ -5,7 +5,9 @@ import 'package:go_router/go_router.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import '../../widgets/main_screen_widgets/event-list.dart';
 import '../../widgets/main_screen_widgets/exercise-list.dart';
+import '../../widgets/main_screen_widgets/icon_text_row.dart';
 import '../../widgets/main_screen_widgets/leaderboard.dart';
+import '../../widgets/main_screen_widgets/status_of_exercise.dart';
 
 class MyHomePage extends StatefulWidget {
    MyHomePage({super.key});
@@ -110,70 +112,22 @@ class _MyHomePageState extends State<MyHomePage> {
 
 }
 
-Widget statusOfExercise(){
-  return Container(
-    width: double.infinity,
-    height: 60,
-    decoration: BoxDecoration(
-    ),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Text(
-                "5 أيام على التوالي",
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 18,
-                color: Colors.orangeAccent
-              ),
-            ),
-            SizedBox(height: 6,),
-            Text(
-                "عمل مذهل انت تقترب اكثر من هدفك حافظ على تقدمك بالقيام بتمارينك اليومية",
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: Colors.orangeAccent
 
-              ),
-            )
-          ],
-        ),
-        SizedBox(width: 4,),
-        Container(
-          width: 70,
-          height: 70,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            image: DecorationImage(
-                image: NetworkImage(
-                    "https://s3-alpha-sig.figma.com/img/11d8/4f19/f522af725e8e00e2169cbdec9440d49c?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Qitu79Dv2bn54LJtjRUO7aV7GDxzznAnLc8JPWWRrgoIe93QPxZLhJNocGN7XEweCCG3AlfQmu8frxbjW4R9Yrsj1WmX4IDQaEJbkVpOtHdFTy1SrJtMvnz3rmVE7E1gMk5xCwp6wjxjxOZxA4fyLBDTQc2BvNM1PYbn4XjPiHbaqovTklGcugpr5NNeZ-uHXuvtTMBYy~IeTmG8AxlG7aWWUj035wXFmpJty9TKBgrUqMitzpvDUpej6uAkeqszm5EHWOCI4b5Pr2Dk-b~yzwD12Bk0e7RySg-3N2koqyxN06QWILNTu0gJO5ihWbMQqKo1cwWCJtjYmEWMEHg3qA__"
-                )
-            ),
+class ModalButtomSheet extends StatelessWidget {
+  const ModalButtomSheet  ({super.key});
 
-          ),
-          child: Center(
-           //  child: Expanded(
-           //   
-           //    //child: NetworkImage("")
-           // // Image.asset("assets/3dicons.svg")
-           //  ),
-          ),
-        ),
-      ],
-    ),
-  );
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+
 }
 
-void _showModalBottomSheet(BuildContext context) {
-  showModalBottomSheet(
+Future _showModalBottomSheet(BuildContext context) {
+ return showModalBottomSheet(
     context: context,
     builder: (BuildContext context) {
       return Container(
-
         padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -186,7 +140,6 @@ void _showModalBottomSheet(BuildContext context) {
               ),
             ),
             SizedBox(height: 10),
-
             IconTextRow(text: 'متابعة تقدمك',icon: Icons.home,),
             IconTextRow(icon: Icons.settings, text: 'دردشة عن حالتك وخطتك'),
             IconTextRow(icon: Icons.info, text: 'محادثة عامة'),
@@ -202,33 +155,4 @@ void _showModalBottomSheet(BuildContext context) {
       );
     },
   );
-}
-// Reusable Row Widget
-class IconTextRow extends StatelessWidget {
-  final IconData icon;
-  final String text;
-
-  const IconTextRow({Key? key, required this.icon, required this.text}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 30,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Icon(
-              Icons.arrow_back
-          ),
-        SizedBox(width: 10),
-          Text(text, style: TextStyle(fontSize: 16)),
-          SizedBox(width: 10),
-          Icon(icon, size: 24.0),
-       // Space between icon and text
-
-        ],
-      ),
-    );
-  }
 }
