@@ -113,15 +113,6 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 
-class ModalButtomSheet extends StatelessWidget {
-  const ModalButtomSheet  ({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-
-}
 
 Future _showModalBottomSheet(BuildContext context) {
  return showModalBottomSheet(
